@@ -121,3 +121,16 @@ button{
   color: black;
   background-color: #d20000;
 }
+
+#successMessage{
+  width: 640px;
+  padding: 10px;
+  height: 48px;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 12px;
+  text-align: center;
+  border: none;
+  color: black;
+  background-color: #07B618;
+}

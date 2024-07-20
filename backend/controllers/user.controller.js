@@ -4,9 +4,12 @@ const User = require("../models/user.model.js")
 const getUsers = async (req,res)=>{
     try {
         const users = await User.find({})
-        res.status(200).json(users)
+        res.status(200).json({
+          message: "Users found successfully",
+          users,
+        });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: `Users not found: ${error.message}`});
     }
 }
 
@@ -15,9 +18,12 @@ const getSingleUser = async (req,res) =>{
     try {
         const { id } = req.params;
     const user = await User.findById(id);
-    res.status(200).json(user);
+    res.status(200).json({
+      message: "User found successfully",
+      user,
+    });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: `User not found: ${error.message}`});
     }
 }
 
@@ -25,9 +31,12 @@ const getSingleUser = async (req,res) =>{
 const createUser = async (req, res) => {
     try {
       const user = await User.create(req.body);
-      res.status(200).json(user);
+      res.status(200).json({
+        message: "User registered successfully",
+        user,
+      });
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ message: `Registration unsuccessful: ${error.message}`});
     }
   };
 

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ButtonLong = () => {
+const ButtonLong = ({onSubmit}) => {
   return (
-    <button>Submit details</button>
+    <button onClick={()=> onSubmit()}>Submit details</button>
   )
 }
 

@@ -4,6 +4,15 @@ const User = require("./models/user.model.js");
 const userRoute = require("./routes/user.route.js");
 const app = express();
 
+require('dotenv').config()
+
+//to resolve credentail issues
+var cors = require('cors')
+
+app.use(cors())
+
+
+
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -19,7 +28,7 @@ app.get("/", (req, res) => {
 //connect db, checks & error catch
 mongoose
   .connect(
-    "mongodb+srv://opeyemiyolo:DX6dUQX5aMPijuwi@cluster4.q9phl7c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster4"
+    `mongodb+srv://opeyemiyolo:${process.env.MONGODB_PASSWORD}@cluster4.q9phl7c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster4`
   )
   .then(() => {
     console.log("Connected to db");
