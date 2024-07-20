@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //route
-app.use("/api/users", userRoute);
+app.use("/api", userRoute);
 
 //read func, send displays in browser
 app.get("/", (req, res) => {

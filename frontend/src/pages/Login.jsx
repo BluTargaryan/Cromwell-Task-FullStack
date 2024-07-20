@@ -5,10 +5,12 @@ import ErrorMessage from '../components/ErrorMessage';
 import NavBeforeLanding from '../components/NavBeforeLanding';
 import SuccessMessage from '../components/SuccessMessage';
 
+import axios from 'axios';
+
 //redux
 import { useDispatch, useSelector } from 'react-redux';
 import { loadUsers } from '../actions/usersAction';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 
 const Login = () => {
@@ -18,15 +20,16 @@ const navigate = useNavigate();
   const [errorVisible, setErrorVisible] = useState(false);
   const [successVisible, setSuccessVisible] = useState(false);
 
+  const [errormsg, setErrormsg] = useState("Your details do not match any account on record. Please check and re-enter your details or create an account.");
   const inputCards = [
     { type: 'email', placeholder: 'Your email', value: emailValue, onChangeFunc: setEmailValue },
     { type: 'password', placeholder: 'Your password', value: passwordValue, onChangeFunc: setPasswordValue },
   ];
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadUsers());
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(loadUsers());
+  // }, [dispatch]);
 
   const { users } = useSelector((state) => state.users);
 
@@ -34,16 +37,21 @@ const navigate = useNavigate();
     e.preventDefault();
     clearMessages();
 
-    const usersArray = users.users
+    const data = {
+      email: emailValue,
+      password: passwordValue
+    };
 
-    const user = usersArray.find((x) => x.email === emailValue && x.password === passwordValue);
-
-    if (user) {
+    axios.post('http://localhost:3000/api/user/login', data)
+    .then((response) => {
       setSuccessVisible(true);
-      navigate('/landing', { state: { name: user.name } });
-    } else {
+      const userId = response.data.userId;
+      navigate('/landing', { state: { id:userId } });
+    })
+    .catch((error) => {
+      setErrormsg('Error:', error.response?.data?.message || 'An error occurred.');
       setErrorVisible(true);
-    }
+    });
   };
 
   const clearMessages = () => {
@@ -63,7 +71,7 @@ const navigate = useNavigate();
             successVisible &&  <SuccessMessage message={"User found successfully"}/>
            }
            {
-            errorVisible &&   <ErrorMessage verError={"Your details does not match any account on record. Please check and re-enter your details or create an account."}/>
+            errorVisible &&   <ErrorMessage verError={errormsg}/>
            }
          
         {inputCards.map((inputProps, index) => (

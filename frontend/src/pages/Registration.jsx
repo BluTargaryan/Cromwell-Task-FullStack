@@ -48,10 +48,11 @@ const Registration = () => {
 
 
 
-    axios.post('http://localhost:3000/api/users/', data)
-      .then(() => {
+    axios.post('http://localhost:3000/api/user/register', data)
+      .then((res) => {
         setSuccessVisible(true);
-        navigate('/landing', { state: { name: textValue } });
+        const userId = res.data.user._id;
+        navigate('/landing', { state: { id:userId } });
       })
       .catch((error) => {
         setErrormsg(error.response?.data?.message || "An error occurred.");
