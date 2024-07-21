@@ -7,9 +7,7 @@ import SuccessMessage from '../components/SuccessMessage';
 
 import axios from 'axios';
 
-//redux
-import { useDispatch, useSelector } from 'react-redux';
-import { loadUsers } from '../actions/usersAction';
+
 import { useNavigate} from 'react-router-dom';
 
 
@@ -26,12 +24,9 @@ const navigate = useNavigate();
     { type: 'password', placeholder: 'Your password', value: passwordValue, onChangeFunc: setPasswordValue },
   ];
 
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(loadUsers());
-  // }, [dispatch]);
 
-  const { users } = useSelector((state) => state.users);
+
+ 
 
   const onSubmit = (e) => {
     e.preventDefault();

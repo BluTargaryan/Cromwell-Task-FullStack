@@ -1,13 +1,13 @@
 const initState = {
-    users: {}
+    user: {}
 }
 
-export const usersReducer = (state = initState, action) => {
+export const userReducer = (state = initState, action) => {
     switch (action.type) {
-        case 'FETCH_USERS':
+        case 'FETCH_USER':
             return {
                 ...state,
-                users: action.payload.users,
+                user: action.payload.user,
             }
         default:
             return { ...state }
