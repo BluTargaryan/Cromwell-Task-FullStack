@@ -20,7 +20,7 @@ const Landing = () => {
 
   const { user } = useSelector((state) => state.user.user);
 
-  console.log(user)
+  // console.log(user)
 
 
   return (
@@ -28,8 +28,8 @@ const Landing = () => {
     <Nav />
     <section>
 <h2>Welcome</h2>
-{user.name && <h1>{user.name}</h1>} 
-{user.email && <h2>of {user.email}</h2>} 
+{user?.name && <h1>{user.name}</h1>} 
+{user?.email && <h2>of {user.email}</h2>} 
     </section>
     </>
   )

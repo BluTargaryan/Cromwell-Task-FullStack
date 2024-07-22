@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1721603443678" clover="3.2.0">
+  <project timestamp="1721603443678" name="All files">
+    <metrics statements="10" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="4" coveredmethods="0" elements="17" coveredelements="0" complexity="0" loc="10" ncloc="10" packages="3" files="4" classes="4"/>
+    <package name="src">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="api.js" path="C:\Users\opeye\Documents\Web 2024\Cromwell-Task-FullStack\frontend\src\api.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.actions">
+      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="userAction.js" path="C:\Users\opeye\Documents\Web 2024\Cromwell-Task-FullStack\frontend\src\actions\userAction.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.reducers">
+      <metrics statements="6" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.js" path="C:\Users\opeye\Documents\Web 2024\Cromwell-Task-FullStack\frontend\src\reducers\index.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="userReducer.js" path="C:\Users\opeye\Documents\Web 2024\Cromwell-Task-FullStack\frontend\src\reducers\userReducer.js">
+        <metrics statements="5" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

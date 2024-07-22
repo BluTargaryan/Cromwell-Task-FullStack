@@ -5,7 +5,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-nav{
+nav {
   width: 100%;
   height: 75px;
   display: flex;
@@ -13,33 +13,31 @@ nav{
   justify-content: center;
 }
 
-#landing-nav{
-gap: 1000px;
+#landing-nav {
+  gap: 1000px;
 }
 
-nav h4{
+nav h4 {
   font-size: 24px;
   color: #d76700;
 }
 
-h1{
+h1 {
   font-size: 96px;
   font-weight: 600;
   color: #d76700;
-  
 }
 
-section{
+section {
   width: 100%;
   padding: 60px 0;
-  
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 10px;
 }
 
-#ver-section{
+#ver-section {
   width: 100%;
   padding: 100px 0;
   display: flex;
@@ -47,27 +45,26 @@ section{
   justify-content: center;
 }
 
-form{
- display: flex;
- flex-direction: column;
- align-items: center;
- gap: 68px;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 68px;
 }
 
-h2{
-font-size: 48px;
-font-weight: 600;
-
+h2 {
+  font-size: 48px;
+  font-weight: 600;
 }
 
-#input-container{
+#input-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 27px;
 }
 
-input{
+input {
   width: 640px;
   height: 48px;
   font-size: 20px;
@@ -79,13 +76,13 @@ input{
   background-color: white;
 }
 
- input::placeholder {
+input::placeholder {
   color: #888888;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
 }
 
-button{
+button {
   width: 464px;
   height: 48px;
   background: #d76700;
@@ -96,11 +93,11 @@ button{
   cursor: pointer;
 }
 
-#short-button{
+#short-button {
   width: 203px;
 }
 
-#verswitch{
+#verswitch {
   width: auto;
   height: 30px;
   display: flex;
@@ -111,7 +108,7 @@ button{
   cursor: pointer;
 }
 
-#errorMessage{
+#errorMessage {
   width: 640px;
   padding: 10px;
   height: 48px;
@@ -124,7 +121,7 @@ button{
   background-color: #d20000;
 }
 
-#successMessage{
+#successMessage {
   width: 640px;
   padding: 10px;
   height: 48px;
@@ -134,5 +131,144 @@ button{
   text-align: center;
   border: none;
   color: black;
-  background-color: #07B618;
+  background-color: #07b618;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  #landing-nav {
+    gap: 500px;
+  }
+
+  h1 {
+    font-size: 72px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  input,
+  #errorMessage,
+  #successMessage {
+    width: 480px;
+  }
+
+  button {
+    width: 360px;
+  }
+}
+
+@media (max-width: 992px) {
+  #landing-nav {
+    gap: 200px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  input,
+  #errorMessage,
+  #successMessage {
+    width: 360px;
+  }
+
+  button {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    height: 60px;
+  }
+
+  nav h4 {
+    font-size: 20px;
+  }
+
+  #landing-nav {
+    gap: 200px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  section {
+    padding: 30px 0;
+  }
+
+  #ver-section {
+    padding: 50px 0;
+  }
+
+  form {
+    gap: 50px;
+  }
+
+  input,
+  #errorMessage,
+  #successMessage {
+    width: 300px;
+  }
+
+  button {
+    width: 240px;
+  }
+
+  #short-button {
+    width: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  nav {
+    height: 50px;
+  }
+
+  nav h4 {
+    font-size: 18px;
+  }
+
+  #landing-nav {
+    gap: 50px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input,
+  #errorMessage,
+  #successMessage {
+    width: 250px;
+    font-size: 18px;
+  }
+
+  button {
+    width: 200px;
+    font-size: 18px;
+  }
+
+  #short-button {
+    width: 150px;
+  }
+
+  form {
+    gap: 40px;
+  }
 }
