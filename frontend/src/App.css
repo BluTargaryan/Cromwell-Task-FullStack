@@ -98,6 +98,7 @@ button {
 }
 
 #verswitch {
+  text-align: center;
   width: auto;
   height: 30px;
   display: flex;
@@ -111,7 +112,7 @@ button {
 #errorMessage {
   width: 640px;
   padding: 10px;
-  height: 48px;
+  height: auto;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   border-radius: 12px;
@@ -124,7 +125,7 @@ button {
 #successMessage {
   width: 640px;
   padding: 10px;
-  height: 48px;
+  height: auto;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   border-radius: 12px;
@@ -193,7 +194,7 @@ button {
   }
 
   #landing-nav {
-    gap: 200px;
+    gap: 400px;
   }
 
   h1 {
@@ -241,7 +242,7 @@ button {
   }
 
   #landing-nav {
-    gap: 50px;
+    gap: 100px;
   }
 
   h1 {
@@ -265,10 +266,14 @@ button {
   }
 
   #short-button {
-    width: 150px;
+    width: 100px;
   }
 
   form {
     gap: 40px;
+  }
+
+  #verswitch{
+    height: 50px;
   }
 }

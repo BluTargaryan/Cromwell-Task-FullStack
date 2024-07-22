@@ -34,6 +34,12 @@ const Registration = () => {
     e.preventDefault();
     clearMessages();
 
+    if (!isValidPassword(passwordValue)) {
+      setErrormsg("Password must be at least 8 characters long, contain an uppercase letter, a lowercase letter, a number, and a special character.");
+      setErrorVisible(true);
+      return;
+    }
+
     if (passwordValue !== rePasswordValue) {
       setErrormsg("Passwords do not match.");
       setErrorVisible(true);
@@ -58,6 +64,16 @@ const Registration = () => {
         setErrormsg(error.response?.data?.message || "An error occurred.");
         setErrorVisible(true);
       });
+  };
+
+  const isValidPassword = (password) => {
+    const minLength = 8;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumber = /\d/.test(password);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+  
+    return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar;
   };
 
   const clearMessages = () => {
