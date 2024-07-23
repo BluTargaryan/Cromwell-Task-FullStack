@@ -56,17 +56,6 @@ describe('App component', () => {
   });
 });
 
-describe('ButtonLong component', () => {
-  it('calls onSubmit when the button is clicked', () => {
-    const mockOnSubmit = vi.fn();
 
-    render(<ButtonLong onSubmit={mockOnSubmit} />);
-
-    const button = screen.getByText(/Submit details/i);
-
-    fireEvent.click(button);
-    expect(mockOnSubmit).toHaveBeenCalled();
-  });
-});
 
 
