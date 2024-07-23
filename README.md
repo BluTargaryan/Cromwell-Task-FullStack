@@ -31,3 +31,11 @@ npm install
 
 ## Run frontend server
 npm run dev
+
+Both frontend and backend should be run at the same time. 
+
+You can use the following details to login
+Email: email@gmail.com
+Password: nuts
+
+To test backend and frontend, run npm test 
